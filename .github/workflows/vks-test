@@ -1,0 +1,13 @@
+name: VKS Test
+on:
+  push:
+    branches:
+    - master
+jobs:  
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    
+    - name: VKS test
+      uses: olegchorny/javascript-actions@master
