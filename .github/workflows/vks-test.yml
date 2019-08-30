@@ -12,7 +12,7 @@ jobs:
     - name: Install kubectl
       uses: azure/k8s-actions/setup-kubectl@master
       with:
-        version: '1.14.0' # default is latest stable
+        version: 'v1.14.0' # default is latest stable
       id: install
 
     - name: Setup python
