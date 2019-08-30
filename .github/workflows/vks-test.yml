@@ -22,7 +22,8 @@ jobs:
         architecture: 'x64' 
 
     - name: VKS test
-      uses: olegchorny/javascript-actions@master
+#       uses: olegchorny/javascript-actions@master
+      uses: ventus-ag/aks-action
       with: 
         url: ${{ secrets.URL }}
         project: ${{ secrets.PROJECT }}
