@@ -9,11 +9,11 @@ jobs:
     
     steps:
  
-    - name: Install kubectl
-      uses: azure/k8s-actions/setup-kubectl@master
+            #    - name: Install kubectl
+            #      uses: azure/k8s-actions/setup-kubectl@master
       #      with:
       #  version: 'v1.14.0' # default is latest stable
-      id: install
+      #      id: install
 
     - name: Setup python
       uses: actions/setup-python@v1 
