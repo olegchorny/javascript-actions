@@ -25,10 +25,10 @@ jobs:
 #       uses: olegchorny/javascript-actions@master
       uses: ventus-ag/vks-action@master
       with: 
-        url: ${{ secrets.URL }}
-        project: ${{ secrets.PROJECT }}
-        domain: ${{ secrets.DOMAIN }}
-        user: ${{ secrets.USER }}
-        userdomain: ${{ secrets.USERDOMAIN }}
-        password: ${{ secrets.PASSWORD }}
-        cluster: ${{ secrets.CLUSTER }}
+        authUrl: ${{ secrets.URL }}
+        projectName: ${{ secrets.PROJECT }}
+        domainName: ${{ secrets.DOMAIN }}
+        userName: ${{ secrets.USER }}
+        userDomainName: ${{ secrets.USERDOMAIN }}
+        userPassword: ${{ secrets.PASSWORD }}
+        clusterName: ${{ secrets.CLUSTER }}
