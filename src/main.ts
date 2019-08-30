@@ -64,13 +64,6 @@ async function kubectl() {
     await exec.exec('kubectl cluster-info');
     }
 
-async function kubectlInstall() {
-    await exec.exec('kubectl cluster-info');
-    await exec.exec('sudo apt-get update && sudo apt-get install -y apt-transport-https')
-    await exec.exec('curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -')
-    await exec.exec('echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list')
-    await exec.exec('sudo apt-get update && sudo apt-get install -y kubectl')
-   }
 
 
   //run();
