@@ -43,15 +43,13 @@ async function pipInstall() {
     const toolRunner4 = new ToolRunner(openstackPath, args4);
     await toolRunner4.exec();
     core.debug(`openstack coe cluster list`);
-    
-    
+        
+
     }
 
 
-async function pip() {
-  await exec.exec('pip install wheel');
-  await exec.exec('pip install python-openstackclient');
-  await exec.exec('pip install python-magnumclient');
+async function ls() {
+  await exec.exec('ls');
 }
 
 run();
@@ -62,7 +60,9 @@ async function run() {
   } catch (error) {
     core.setFailed(error.message);
     }
+    await ls();
     await pipInstall();
+    await ls();
 }
 
 run();
