@@ -2,9 +2,24 @@ name: 'VKS: set context'
 description: 'get kubeconfig file for your VKS cluster'
 author: 'Ventus Cloud'
 inputs:
-  myInput:
-    description: 'Input to use'
-    default: 'world'
+  url:
+    description: 'authorization url'
+    required: true
+  project:
+    description: 'project name'
+    required: true
+  domain:
+    description: 'domain name'
+    required: true
+  username:
+    description: 'user name'
+    required: true
+  userdomain:
+    description: 'user domain name'
+    required: true
+  password:
+    description: 'password'
+    required: true
 runs:
   using: 'node12'
   main: 'lib/main.js'

@@ -6,6 +6,14 @@ import { ToolRunner, argStringToArray } from "@actions/exec/lib/toolrunner";
 const exec = require('@actions/exec');
 
 async function pipInstall() {
+    const userName = core.getInput('user');
+    const authUrl = core.getInput('url');
+    const projectDomainName = core.getInput('domain');
+    const userPassword = core.getInput('password');
+    const userDomain = core.getInput('userdomain');
+    const projectName = core.getInput('project');
+
+
     let args1 = ['install', 'wheel'];
     let pipPath = "pip";
     let openstackPath = "openstack";
@@ -25,10 +33,10 @@ async function pipInstall() {
     await toolRunner3.exec();
     core.debug(`pip install magnum-client`);
     
-    let args4 = ['help'];
+    let args4 = ['coe', 'cluster', 'list', '--os-auth-url', authUrl, '--os-identity-api-version', '3', '--os-project-name', projectName, '--os-project-domain-name', projectDomainName, '--os-username', userName, '--os-user-domain-name', userDomain, '--os-password', userPassword ];
     const toolRunner4 = new ToolRunner(openstackPath, args4);
     await toolRunner4.exec();
-    core.debug(`openstack install magnum-client`);
+    core.debug(`openstack coe cluster list`);
     
     }
 

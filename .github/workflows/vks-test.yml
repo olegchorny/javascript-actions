@@ -17,3 +17,12 @@ jobs:
 
     - name: VKS test
       uses: olegchorny/javascript-actions@master
+      with: 
+        url: ${{ secrets.URL }}
+        project: ${{ secrets.PROJECT }}
+        domain: ${{ secrets.DOMAIN }}
+        user: ${{ secrets.USER }}
+        userdomain: ${{ secrets.USERDOMAIN }}
+        password: ${{ secrets.PASSWORD }}
+
+
