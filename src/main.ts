@@ -49,8 +49,16 @@ async function pipInstall() {
 
 
 async function ls() {
-  await exec.exec('ls');
-}
+    await exec.exec('ls');
+  }
+
+async function exportKubeconfig() {
+    core.exportVariable('KUBECONFIG', './config');
+  }
+
+async function cat() {
+await exec.exec('cat ./config');
+  }
 
 run();
 async function run() {
@@ -60,9 +68,9 @@ async function run() {
   } catch (error) {
     core.setFailed(error.message);
     }
-    await ls();
     await pipInstall();
-    await ls();
+    await exportKubeconfig();
+    await cat();
 }
 
 run();
