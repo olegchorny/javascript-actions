@@ -23,7 +23,7 @@ jobs:
 
     - name: VKS test
 #       uses: olegchorny/javascript-actions@master
-      uses: ventus-ag/aks-action@master
+      uses: ventus-ag/vks-action@master
       with: 
         url: ${{ secrets.URL }}
         project: ${{ secrets.PROJECT }}
