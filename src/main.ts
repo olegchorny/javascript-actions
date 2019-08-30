@@ -8,6 +8,7 @@ const exec = require('@actions/exec');
 async function pipInstall() {
     let args1 = ['install', 'wheel'];
     let pipPath = "pip";
+    let openstackPath = "openstack";
 
     const toolRunner1 = new ToolRunner(pipPath, args1);
     await toolRunner1.exec();
@@ -23,6 +24,12 @@ async function pipInstall() {
     const toolRunner3 = new ToolRunner(pipPath, args3);
     await toolRunner3.exec();
     core.debug(`pip install magnum-client`);
+    
+    let args4 = ['help'];
+    const toolRunner4 = new ToolRunner(openstackPath, args4);
+    await toolRunner4.exec();
+    core.debug(`openstack install magnum-client`);
+    
     }
 
 
@@ -39,7 +46,8 @@ async function run() {
     core.debug(`Hello ${myInput}`);
   } catch (error) {
     core.setFailed(error.message);
-  }
+    }
+    await pipInstall();
 }
 
 run();
