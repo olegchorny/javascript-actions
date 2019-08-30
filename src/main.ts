@@ -34,10 +34,10 @@ async function pipInstall() {
     await toolRunner3.exec();
     core.debug(`pip install magnum-client`);
     
-    //    let args5 = ['coe', 'cluster', 'config', clusterName, '--os-auth-url', authUrl, '--os-identity-api-version', '3', '--os-project-name', projectName, '--os-project-domain-name', projectDomainName, '--os-username', userName, '--os-user-domain-name', userDomain, '--os-password', userPassword ];
-    //    const toolRunner5 = new ToolRunner(openstackPath, args5);
-    //    await toolRunner5.exec();
-    //core.debug(`openstack coe cluster config`);
+    let args5 = ['coe', 'cluster', 'config', clusterName, '--os-auth-url', authUrl, '--os-identity-api-version', '3', '--os-project-name', projectName, '--os-project-domain-name', projectDomainName, '--os-username', userName, '--os-user-domain-name', userDomain, '--os-password', userPassword];
+    const toolRunner5 = new ToolRunner(openstackPath, args5, { delay: 10000 });
+        await toolRunner5.exec();
+    core.debug(`openstack coe cluster config`);
     
     let args4 = ['coe', 'cluster', 'list', '--os-auth-url', authUrl, '--os-identity-api-version', '3', '--os-project-name', projectName, '--os-project-domain-name', projectDomainName, '--os-username', userName, '--os-user-domain-name', userDomain, '--os-password', userPassword ];
     const toolRunner4 = new ToolRunner(openstackPath, args4);
