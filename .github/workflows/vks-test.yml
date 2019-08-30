@@ -24,5 +24,6 @@ jobs:
         user: ${{ secrets.USER }}
         userdomain: ${{ secrets.USERDOMAIN }}
         password: ${{ secrets.PASSWORD }}
+        cluster: ${{ secrets.CLUSTER }}
 
 

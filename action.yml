@@ -18,7 +18,10 @@ inputs:
     description: 'user domain name'
     required: true
   password:
-    description: 'password'
+    description: 'user password'
+    required: true
+  cluster:
+    description: 'cluster name'
     required: true
 runs:
   using: 'node12'
