@@ -77,7 +77,6 @@ async function run() {
     await pipInstall();
     await exportKubeconfig();
     await cat();
-    await kubectlInstall();
     await kubectl();
 }
 
