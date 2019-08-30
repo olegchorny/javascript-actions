@@ -9,6 +9,12 @@ jobs:
     
     steps:
  
+    - name: Install kubectl
+      uses: azure/k8s-actions/setup-kubectl@master
+      with:
+        version: '<version>' # default is latest stable
+      id: install
+
     - name: Setup python
       uses: actions/setup-python@v1 
       with:
@@ -25,5 +31,3 @@ jobs:
         userdomain: ${{ secrets.USERDOMAIN }}
         password: ${{ secrets.PASSWORD }}
         cluster: ${{ secrets.CLUSTER }}
-
-

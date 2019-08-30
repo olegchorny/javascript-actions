@@ -57,10 +57,14 @@ async function exportKubeconfig() {
   }
 
 async function cat() {
-await exec.exec('cat ./config');
+    await exec.exec('cat ./config');
+  }
+  
+  async function kubectl() {
+    await exec.exec('kubectl cluster-info');
   }
 
-run();
+  //run();
 async function run() {
   try {
     const myInput = core.getInput('myInput');
@@ -71,6 +75,7 @@ async function run() {
     await pipInstall();
     await exportKubeconfig();
     await cat();
+    await kubectl();
 }
 
 run();
