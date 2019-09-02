@@ -15,11 +15,11 @@ jobs:
 #  version: 'v1.14.0' # default is latest stable
 #      id: install
 
-#     - name: Setup python
-#       uses: actions/setup-python@v1 
-#       with:
-#         python-version: '3.x'
-#         architecture: 'x64' 
+    - name: Setup python
+      uses: actions/setup-python@v1 
+      with:
+        python-version: '3.x'
+        architecture: 'x64' 
 
     - name: VKS test
       uses: ventus-ag/vks-action@master
