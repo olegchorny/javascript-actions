@@ -4,25 +4,24 @@ on:
     branches:
     - master
 jobs:  
-  build:
+  context:
     runs-on: ubuntu-latest
     
     steps:
  
-            #    - name: Install kubectl
-            #      uses: azure/k8s-actions/setup-kubectl@master
-      #      with:
-      #  version: 'v1.14.0' # default is latest stable
-      #      id: install
+#    - name: Install kubectl
+#      uses: azure/k8s-actions/setup-kubectl@master
+#      with:
+#  version: 'v1.14.0' # default is latest stable
+#      id: install
 
-    - name: Setup python
-      uses: actions/setup-python@v1 
-      with:
-        python-version: '3.x'
-        architecture: 'x64' 
+#     - name: Setup python
+#       uses: actions/setup-python@v1 
+#       with:
+#         python-version: '3.x'
+#         architecture: 'x64' 
 
     - name: VKS test
-#       uses: olegchorny/javascript-actions@master
       uses: ventus-ag/vks-action@master
       with: 
         authUrl: ${{ secrets.URL }}
